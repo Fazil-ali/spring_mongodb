@@ -6,20 +6,10 @@ pipeline{
                     git branch: 'main', url: 'https://github.com/Fazil-ali/spring_mongodb.git'
                 }
             }
-            stage('Maven Test'){
+            stage('Create docker image'){
                 steps{
-                    sh 'mvn test'
+                    sh 'docker build -t Fazil-ali/spring_mongodb:latest'
                 }
-            }  
-            stage('Maven build'){
-                steps{
-                    sh 'mvn package'
-                }
-            }
-            stage('Maven deploy'){
-                steps{
-                    echo 'deploy the war file to the server'
-                }
-            }            
+            }             
         }
 }
