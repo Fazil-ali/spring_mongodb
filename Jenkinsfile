@@ -8,7 +8,7 @@ pipeline{
             }
             stage('Create docker image'){
                 steps{
-                    sh 'docker build -t fazil-ali/spring_mongodb:latest'
+                    sh 'docker build -t /spring_mongodb:latest'
                 }
             }             
         }
